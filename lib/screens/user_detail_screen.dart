@@ -9,7 +9,18 @@ class UserDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Detalles del Usuario')),
+      appBar: AppBar(
+        title: Text('Detalles del Usuario'),
+        actions: [
+          IconButton(
+            icon: Image.asset('assets/images/custom_icon.png'),
+            onPressed: () {
+              // Acción al presionar el ícono
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
         child: Column(

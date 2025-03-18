@@ -13,7 +13,19 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('GraphQL Users'), elevation: 2),
+      appBar: AppBar(
+        title: Text('GraphQL - Rick and Morty API'),
+        elevation: 2,
+        actions: [
+          IconButton(
+            icon: Image.asset('assets/images/custom_icon.png'),
+            onPressed: () {
+              // Acción al presionar la imagen
+              userController.fetchUsers();
+            },
+          ),
+        ],
+      ),
       body: RefreshIndicator(
         onRefresh: () => userController.fetchUsers(),
         child: Obx(() {
