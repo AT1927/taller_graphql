@@ -1,6 +1,5 @@
 # app_graphql
-Created by: Edgar Andres Torres Muñoz (809977)
-Flutter 2 - UCC Campus Pasto 8°
+Created by: Edgar Andres Torres Muñoz (809977) / Flutter 2 - UCC Campus Pasto 8°
 
 - App Flutter GraphQL - Rick & Morty:
 
@@ -9,14 +8,14 @@ La aplicación permite a los usuarios ver una lista de personajes de la serie Ri
 
 Funcionalidades:
 
-- Pantalla Principal (HomeScreen):
-Lista de Personajes: La pantalla principal muestra una lista de personajes obtenidos de la API de Rick and Morty.
-Actualización de Datos: Los usuarios pueden actualizar la lista de personajes deslizando hacia abajo (pull-to-refresh) o presionando el ícono de la serie ubicado en la parte superior derecha del AppBar.
-Navegación a Detalles: Al tocar un personaje en la lista, los usuarios son llevados a una pantalla de detalles del personaje.
+Pantalla Principal (HomeScreen):
+- Lista de Personajes: La pantalla principal muestra una lista de personajes obtenidos de la API de Rick and Morty.
+- Actualización de Datos: Los usuarios pueden actualizar la lista de personajes deslizando hacia abajo (pull-to-refresh) o presionando el ícono de la serie ubicado en la parte superior derecha del AppBar.
+- Navegación a Detalles: Al tocar un personaje en la lista, los usuarios son llevados a una pantalla de detalles del personaje.
 
-- Pantalla de Detalles del Personaje (CharacterDetailScreen):
-Detalles del Personaje: Muestra información detallada sobre el personaje seleccionado, incluyendo su nombre, estado, especie, género, origen, ubicación, y una imagen.
-Navegación de Regreso: Los usuarios pueden regresar a la pantalla principal presionando el ícono de la serie ubicado en la parte superior derecha del AppBar.
+Pantalla de Detalles del Personaje (CharacterDetailScreen):
+- Detalles del Personaje: Muestra información detallada sobre el personaje seleccionado, incluyendo su nombre, estado, especie, género, origen, ubicación, y una imagen.
+- Navegación de Regreso: Los usuarios pueden regresar a la pantalla principal presionando el ícono de la serie ubicado en la parte superior derecha del AppBar.
 
 - Ejecutar Aplicación: flutter run (Terminal)
 
