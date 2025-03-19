@@ -26,12 +26,16 @@ class CharacterCard extends StatelessWidget {
             children: [
               Text(
                 character.name,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: const Color.fromARGB(255, 21, 172, 241),
+                ),
               ),
               SizedBox(height: 8),
               Row(
                 children: [
-                  Icon(Icons.email, size: 16, color: Colors.grey),
+                  Icon(Icons.settings, size: 16, color: Colors.grey),
                   SizedBox(width: 8),
                   Expanded(
                     child: Text(
@@ -44,7 +48,7 @@ class CharacterCard extends StatelessWidget {
               SizedBox(height: 4),
               Row(
                 children: [
-                  Icon(Icons.phone, size: 16, color: Colors.grey),
+                  Icon(Icons.people, size: 16, color: Colors.grey),
                   SizedBox(width: 8),
                   Text(
                     character.gender,

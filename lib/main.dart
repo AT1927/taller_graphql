@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     return GraphQLProvider(
       client: GraphQLConfig.clientToQuery(),
       child: GetMaterialApp(
-        title: 'Flutter GraphQL App',
+        title: 'Flutter GraphQL App - Rick and Morty API',
         theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: false),
         home: HomeScreen(),
         debugShowCheckedModeBanner: false,

@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('GraphQL - Rick and Morty API'),
-        elevation: 2,
+        elevation: 3,
         actions: [
           IconButton(
             icon: Image.asset('assets/images/custom_icon.png'),

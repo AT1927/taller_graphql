@@ -69,7 +69,7 @@ class CharacterDetailScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(label, style: TextStyle(fontSize: 14, color: Colors.grey)),
+          Text(label, style: TextStyle(fontSize: 16, color: Colors.lightBlue)),
           SizedBox(height: 4),
           Text(
             value,
