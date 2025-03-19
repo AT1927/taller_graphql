@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:app_graphql/controllers/user_controller.dart';
-import 'package:app_graphql/screens/user_detail_screen.dart';
-import 'package:app_graphql/widgets/user_card.dart';
+import 'package:app_graphql/controllers/character_controller.dart';
+import 'package:app_graphql/screens/character_detail_screen.dart';
+import 'package:app_graphql/widgets/character_card.dart';
 
 class HomeScreen extends StatelessWidget {
-  final UserController userController = Get.find<UserController>();
+  final CharacterController characterController =
+      Get.find<CharacterController>();
 
   HomeScreen({super.key});
 
@@ -21,46 +22,48 @@ class HomeScreen extends StatelessWidget {
             icon: Image.asset('assets/images/custom_icon.png'),
             onPressed: () {
               // Acción al presionar la imagen
-              userController.fetchUsers();
+              characterController.fetchCharacters();
             },
           ),
         ],
       ),
       body: RefreshIndicator(
-        onRefresh: () => userController.fetchUsers(),
+        onRefresh: () => characterController.fetchCharacters(),
         child: Obx(() {
-          if (userController.isLoading.value) {
+          if (characterController.isLoading.value) {
             return Center(child: CircularProgressIndicator());
-          } else if (userController.error.value.isNotEmpty) {
+          } else if (characterController.error.value.isNotEmpty) {
             return Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Error: ${userController.error.value}',
+                    'Error: ${characterController.error.value}',
                     style: TextStyle(color: Colors.red),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 16),
                   ElevatedButton(
-                    onPressed: () => userController.fetchUsers(),
+                    onPressed: () => characterController.fetchCharacters(),
                     child: Text('Reintentar'),
                   ),
                 ],
               ),
             );
-          } else if (userController.users.isEmpty) {
-            return Center(child: Text('No hay usuarios disponibles'));
+          } else if (characterController.characters.isEmpty) {
+            return Center(
+              child: Text('No hay personajes de Rick & Morty disponibles!'),
+            );
           } else {
             return ListView.builder(
               padding: EdgeInsets.all(16),
-              itemCount: userController.users.length,
+              itemCount: characterController.characters.length,
               itemBuilder: (context, index) {
-                final user = userController.users[index];
-                return UserCard(
-                  user: user,
+                final character = characterController.characters[index];
+                return CharacterCard(
+                  character: character,
                   onTap: () {
-                    Get.to(() => UserDetailScreen(user: user));
+                    Get.to(() => CharacterDetailScreen(character: character));
                   },
                 );
               },

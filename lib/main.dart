@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 import 'package:app_graphql/config/graphql_config.dart';
-import 'package:app_graphql/controllers/user_controller.dart';
+import 'package:app_graphql/controllers/character_controller.dart';
 import 'package:app_graphql/screens/home_screen.dart';
 
 void main() async {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Inicializar el controlador de usuarios como un singleton global
-    Get.put(UserController());
+    Get.put(CharacterController());
 
     return GraphQLProvider(
       client: GraphQLConfig.clientToQuery(),

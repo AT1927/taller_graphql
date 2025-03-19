@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:app_graphql/models/user.dart';
+import 'package:app_graphql/models/character.dart';
 
-class UserDetailScreen extends StatelessWidget {
-  final User user;
+class CharacterDetailScreen extends StatelessWidget {
+  final Character character;
 
-  const UserDetailScreen({super.key, required this.user});
+  const CharacterDetailScreen({super.key, required this.character});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detalles del Usuario'),
+        title: Text('Detalles del Personaje'),
         actions: [
           IconButton(
             icon: Image.asset('assets/images/custom_icon.png'),
             onPressed: () {
-              // Acción al presionar el ícono
               Navigator.pop(context);
             },
           ),
@@ -29,15 +28,8 @@ class UserDetailScreen extends StatelessWidget {
             Center(
               child: CircleAvatar(
                 radius: 50,
+                backgroundImage: NetworkImage(character.image),
                 backgroundColor: Colors.blue.shade100,
-                child: Text(
-                  user.name.substring(0, 1).toUpperCase(),
-                  style: TextStyle(
-                    fontSize: 40,
-                    color: Colors.blue,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
               ),
             ),
             SizedBox(height: 24),
@@ -48,13 +40,19 @@ class UserDetailScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _buildDetailRow('ID', '${user.id}'),
+                    _buildDetailRow('ID', '${character.id}'),
                     Divider(),
-                    _buildDetailRow('Nombre', user.name),
+                    _buildDetailRow('Nombre', character.name),
                     Divider(),
-                    _buildDetailRow('Email', user.email),
+                    _buildDetailRow('Estado', character.status),
                     Divider(),
-                    _buildDetailRow('Teléfono', user.phone),
+                    _buildDetailRow('Especie', character.species),
+                    Divider(),
+                    _buildDetailRow('Género', character.gender),
+                    Divider(),
+                    _buildDetailRow('Origen', character.origin.name),
+                    Divider(),
+                    _buildDetailRow('Ubicación', character.location.name),
                   ],
                 ),
               ),

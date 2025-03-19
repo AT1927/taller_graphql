@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:app_graphql/models/user.dart';
+import 'package:app_graphql/models/character.dart';
 
-class UserCard extends StatelessWidget {
-  final User user;
+class CharacterCard extends StatelessWidget {
+  final Character character;
   final VoidCallback onTap;
 
-  const UserCard({super.key, required this.user, required this.onTap});
+  const CharacterCard({
+    super.key,
+    required this.character,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +25,7 @@ class UserCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                user.name,
+                character.name,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 8),
@@ -31,7 +35,7 @@ class UserCard extends StatelessWidget {
                   SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      user.email,
+                      character.species,
                       style: TextStyle(color: Colors.grey[700]),
                     ),
                   ),
@@ -42,7 +46,10 @@ class UserCard extends StatelessWidget {
                 children: [
                   Icon(Icons.phone, size: 16, color: Colors.grey),
                   SizedBox(width: 8),
-                  Text(user.phone, style: TextStyle(color: Colors.grey[700])),
+                  Text(
+                    character.gender,
+                    style: TextStyle(color: Colors.grey[700]),
+                  ),
                 ],
               ),
             ],
