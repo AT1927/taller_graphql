@@ -26,6 +26,8 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         title: 'Flutter GraphQL App - Rick and Morty API',
         theme: ThemeData(primarySwatch: Colors.blue, useMaterial3: false),
+        //darkTheme: ThemeData.dark(),
+        //themeMode: ThemeMode.system,
         home: HomeScreen(),
         debugShowCheckedModeBanner: false,
       ),
